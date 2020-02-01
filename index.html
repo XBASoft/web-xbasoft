@@ -2,12 +2,12 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
     <title>Портфолио Junior верстальщика</title>
   </head>
 
-  <body>
+  <body class="image-sky">
     <header class="page-header">
       <div class="container">
         <a class="header-email" href="mailto:xrba@yandex.ru">xrba@yandex.ru</a>
@@ -25,21 +25,32 @@
     <section class="intro">
       <div class="container">
         <h2 class="subheading">Обо мне</h2>
-        <h3>Навыки</h3>
-        <ul>
-          <li>С++</li>
-          <li>PHP</li>
-          <li>HTML</li>
-        </ul>
+			<div class="skills">
+				<h3>Мои навыки</h3>
+				<dl class="skills-list">
+				  <dt class="skill-cpp">С++</dt>
+					<dd class="level"><div style="width: 60%">60%</div></dd>
+				  <dt class="skill-php">PHP</dt>
+					<dd class="level"><div style="width: 60%">60%</div></dd>
+				  <dt class="skill-html">HTML</dt>
+					<dd class="level"><div style="width: 50%">50%</div></dd>
+				  <dt class="skill-css">CSS</dt>
+					<dd class="level"><div style="width: 50%">50%</div></dd>
+				</dl>
+			</div>
+			
         <h3>Знания библиотек</h3>
-        <ul>
-          <li>VCL(Builder C++)</li>
-        </ul>
+			<div class="skills">
+				<dl class="skills-list">
+				  <dt class="skill-vcl">VCL (Builder C++)</dt>
+					<dd class="level"><div style="width: 60%">60%</div></dd>
+				</dl>	
+			</div>
       </div>
     </section>
 	
 	<figure class="user-image">
-		<img src="files/user.jpg" width="928" height="536" alt="Моя фотография">
+		<img class="ellipse-image" src="files/user.jpg" width="928" height="536" alt="Моя фотография">
 	</figure>
 
     <section class="portfolio">
@@ -50,7 +61,7 @@
 			<li>
 			<dl>
 			  <dt>Сайт программы футбольной статистики и программа SocAll под Windows.</dt>
-				<dd><a href="http://www.socall.info/ru/" target="_blank">http://www.socall.info/ru/</a></dd>
+				<dd><a class="button" href="http://www.socall.info/ru/" target="_blank">Открыть сайт socall</a></dd>
 			</dl>
 			</li>
 			
@@ -63,12 +74,12 @@
 				<a class="button" href="source/project/index.html">Открыть страницу</a>
 			</figcaption>
 			</li>-->
-			
+			<!--
 			<li>
 			  <dl>
-				  <dt><img src="files/project.jpg" width="428" alt="Cайт инструктора Кекса"></dt>
+				  <dt><img class="ellipse-image" src="files/project.jpg" width="428" alt="Cайт инструктора Кекса"></dt>
 				  <dd><a class="button" href="source/project/index.html">Открыть страницу</a></dd>
-			</li>
+			</li>-->
         </ul>
 		
       </div>

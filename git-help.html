@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" rel="stylesheet">
+		<title>Портфолио Junior верстальщика</title>
+	</head>
+
+	<body>
+		<ul>
+			<li><a href="#rollback">Как откатить коммиты</a></li>
+		</ul>
+
+		<h1 id="rollback">Как откатить коммиты на github.com</h1>
+		<dl>
+		<dt>Выбираем нужный бранч(ветку), у меня она master</dt>
+			<dd>git checkout master</dd>
+		<dt>Делаем откат изменений в репозитории для примера на два коммита назад</dt>
+			<dd>git reset --hard HEAD~2</dd>
+		<dt>Можно сделать до какого то определенного коммита по хешу. 
+			Хеш можно взять в вебинтерфейсе гитхаба.</dt>
+			<dd>git reset --hard HEAD hash</dd>
+		<dt>Далее делаем принудительный коммит в основной репо на гитхабе<dt>
+			<dd>
+				git push -f origin master<br>
+				без -f будет ругаться что у вас версия младше чем в гитхабе и вам надо сделать pull
+			</dd>
+		</dl>
+
+	</body>
+</html>
