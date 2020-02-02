@@ -76,7 +76,7 @@ body {
 }
 
 .intro {
-  margin: 0 0 120px;
+  margin: 0 0 60px;
 }
 
 .subheading {
@@ -109,6 +109,14 @@ body {
 
 .skills {
   margin-top: 40px;
+  padding: 10px;
+  background-color: #000000;
+  border: 3px solid #fffeff;
+  border-radius: 8px;
+}
+
+.skills h3 {
+  text-align: center;
 }
 
 .skills-list {
@@ -168,7 +176,7 @@ body {
 }
 
 .portfolio {
-  margin: 0 0 120px;
+  margin: 0 0 30px;
 }
 
 .projects {
