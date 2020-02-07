@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    <!-- <== Обязательная шапка сайта -->
+
+    <link rel="stylesheet" href="../../css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Old+Standard+TT&display=swap&subset=cyrillic" 
+			rel="stylesheet">
+		<title>Документация по HTML</title>
+  </head>
+  
+  <body>
+    <div id="menu"></div>
+    <header class="page-header">
+      <div class="container">
+        Заголовок сайта
+      </div>
+    </header>
+
+    <div class="container-border">
+      <a href="../../index.html">На главную</a>
+    </div>
+    
+    <nav>
+      <div class="container-border">
+        <h1>Важные практики от FSD</h1>
+        <ol>
+          <li>Отступы делать пробелами, на проекте во всех файлах html, pug, etc 
+            должен быть одинаковый отсуп — либо 4, либо 2 пробела</li>
+          <li><a href="#semantic">Семантика</a></li>
+          <li><a href="#tegs">Теги</a></li>
+          <li><a href="#include-files">Подключаемые файлы</a></li>
+        </ol>
+          
+      </div>
+    </nav>
+
+    <section>
+      <div id="semantic" class="container-border command">
+        <h3>Семантика</h3>
+        <ol>
+          <li>Объединять блоки не по их визуальному расположению, а по их смыслу</li>
+          <li>Если есть что-то похожее на список, проверяем как будет выглядеть при большем количестве элементов</li>
+          <li>Все элементы, где контент выглядит динамическим - проверяем если количество знаков будет больше, чем в макете</li>
+          <li>Не вставлять блочные элементы внутрь инлайновых</li>
+          <li>Использовать h1..h6 только для заголовков, причем h1 должен встречаться в одной странице всего один раз</li>
+          <li>Использовать <code>&lt;table&gt;</code> только для реальных таблиц</li>
+          <li>Не использовать <code>&lt;br&gt;</code> нигде, кроме случаев, когда соблюдены все требования</li>
+          <li>Использовать семантические теги
+            <p><a href="../../files/html/html-select-tegs.png">Блок-схема выбора семантических тегов</a></p>
+          </li>
+        </ol>
+        <div class="container align-right">
+          <a href="https://github.com/fullstack-development/front-end-best-practices/blob/master/HTML/semantic.md" 
+                  target="_blank">ссылка на источник</a>
+        </div>
+        <a href="#menu">К оглавлению</a>
+      </div>
+
+      <div id="tegs" class="container-border command">
+          <h3>Теги</h3>
+          <ol>
+            <li>Все теги должны работать даже без CSS и JS</li>
+            <li>Структура тегов в первую очередь должна идти от содержания, а не от дизайна</li>
+            <li>
+              Начинаем новый .html файл с <code>&lt;!DOCTYPE html&gt;</code>, как следует по HTML5 стандарту, 
+              если этот файл не предназначен для расширения другими файлами через какой-нибудь шаблонизатор
+            </li>
+            <li>Перед <code>&lt;!DOCTYPE html&gt;</code> не должно быть никаких символов, включая пробелов и переносов строк</li>
+            <li>Внутри <code>&lt;head&gt;</code> первым тегом должно идти <code>&lt;meta charset="utf-8"&gt;</code></li>
+            <li>
+              У каждой страницы должны быть теги <code>title</code> и мета теги <code>keywords</code>, 
+              <code>description</code> (на содержимое спросить контент у менеджера)
+            </li>
+            <li>
+              В head добавлять <code>&lt;meta name="viewport" content="initial-scale=1.0, width=device-width"&gt;</code> 
+              - на мобильных браузерах можно избежать горизонтального скролла и масштабировать контент на всю ширину экрана
+            </li>
+            <li>Не использовать самозакрывающиеся теги, если они не поддерживают другого режима</li>
+            <li>Все атрибуты должны быть внутри двойных кавычек</li>
+            <li>Не использовать id, кроме случаев, когда они семантически востребованы</li>
+            <li>
+                Все теги идут только с классами - никаких пустых <code>&lt;div&gt;</code>, <code>&lt;section&gt;</code> 
+                и тд. Но можно для инлайновых элементов, если есть четкое понимание зачем. Это очень сильно мешает 
+                новым людям входить в проект и вам через некоторое время разобраться в собственной верстке
+            </li>
+            <li>Избегать по-максимуму инлайновые стили и обработчики событий в html (то есть никаких 
+              <code class="nowordwrap">&lt;div onclick="func()"&gt;)</code>
+            </li>
+            <li>Все изображения должны содержать <code>alt</code></li>
+            <li>
+                Не использовать ссылки с пустым или невалидным href (никаких <code>&lt;a href="#"&gt;</code>) - 
+                тогда лучше использовать ссылку-заглушку на несуществующий урл, который явно говорит, что ссылка не проставлена
+            </li>
+            <li>Ссылки на чужие сайты должны содержать атрибут <code>target="_blank"</code>, чтобы открываться в новом окне</li>
+            <li>
+              Все ссылки с <code>target="_blank"</code> должны так же содержать атрибут <code>rel="noopener noreferrer"</code>, 
+              это связано с уязвимостью
+            </li>
+            <li>Все инпуты, селекты и другие интерактивные элементы должны быть обрамлены в форме <code>&lt;form&gt;</code></li>
+            <li>
+                Все интерактивные элементы, для которых дизайнером задуман нетривиальный порядок полей, использовать всегда 
+                <code>tabindex</code>, плюс всегда кнопка сабмита в <code>tabindex</code> должна быть последней (соответственно если 
+                есть визуально поля под кнопкой, у них должен быть <code>tabindex</code> и он должен быть меньше, чем у кнопки)
+            </li>
+            <li>Спрашивать у дизайнеров, какие элементы делать autofocus на какой странице</li>
+            <li>Никогда не допускать вложенные формы <code>&lt;form&gt;</code></li>
+            <li>Если у поля есть четкое назначение, то использовать соответствующий тип (email, number, color и тд)</li>
+            <li>Каждый тег в котором может лежать текст должен быть проверен на большое количество символов</li>
+            <li>
+              Классические инлайн теги должны быть только inline или inline-block и в них не должно быть 
+              ничего кроме простого текста и других таких же инлайновых тегов
+            </li>
+            <li>Для телефонов, емайл-адресов и скайп никнеймов нужно использовать <code>&lt;a&gt;</code> c соответствующим адресом</li>
+            <li>Отображать примеры кода через тег <code>&lt;code&gt;</code></li>
+          </ol>
+          <div class="container align-right">
+            <a href="https://github.com/fullstack-development/front-end-best-practices/blob/master/HTML/tags.md" 
+                    target="_blank">ссылка на источник</a>
+          </div>
+          <a href="#menu">К оглавлению</a>
+        </div>
+
+        <div id="include-files" class="container-border command">
+          <ol>
+            <li>1</li>
+          </ol>
+        </div>
+    </section>
+
+    <footer class="page-footer">
+      <div class="container">
+        Подвал сайта
+      </div>
+    </footer>
+  </body>
