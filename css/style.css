@@ -114,6 +114,7 @@ body {
   background-color: #000000;
   border: 3px solid #fffeff;
   border-radius: 8px;
+  max-width: 1200px;
 }
 
 .container-border h3, .container-border h1 {
